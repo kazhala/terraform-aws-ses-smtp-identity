@@ -1,17 +1,17 @@
 variable "iam_username" {
-  default     = "ses-smtp-user"
+  description = "The Name for the SES IAM user."
   type        = string
-  description = "Name of the SES IAM user."
+  default     = "ses-smtp-user"
 }
 
 variable "iam_path" {
-  default     = "/"
+  description = "The IAM path for the SES IAM user."
   type        = string
-  description = "IAM path for the new SES IAM user."
+  default     = "/"
 }
 
 variable "tags" {
-  default     = {}
-  type        = map(string)
   description = "Additional resource tags to apply to applicable resources. Format: {\"key\" = \"value\"}"
+  type        = map(string)
+  default     = {}
 }

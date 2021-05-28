@@ -17,6 +17,7 @@ resource "aws_iam_user" "this" {
 }
 
 resource "aws_iam_user_policy" "this" {
+  # checkov:skip=CKV_AWS_40:Required for SES user.
   name = "AmazonSesSendingAccess"
   user = aws_iam_user.this.name
 
@@ -29,7 +30,6 @@ resource "aws_iam_user_policy" "this" {
         "Resource" : "*"
       }
     ]
-
   })
 }
 

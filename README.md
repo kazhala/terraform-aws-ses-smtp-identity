@@ -33,16 +33,16 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_iam_path"></a> [iam\_path](#input\_iam\_path) | IAM path for the new SES IAM user. | `string` | `"/"` | no |
-| <a name="input_iam_username"></a> [iam\_username](#input\_iam\_username) | Name of the SES IAM user. | `string` | `"ses-smtp-user"` | no |
+| <a name="input_iam_path"></a> [iam\_path](#input\_iam\_path) | The IAM path for the SES IAM user. | `string` | `"/"` | no |
+| <a name="input_iam_username"></a> [iam\_username](#input\_iam\_username) | The Name for the SES IAM user. | `string` | `"ses-smtp-user"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional resource tags to apply to applicable resources. Format: {"key" = "value"} | `map(string)` | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_smtp_endpoint"></a> [smtp\_endpoint](#output\_smtp\_endpoint) | AWS SES SMTP host endpoint. |
-| <a name="output_smtp_password"></a> [smtp\_password](#output\_smtp\_password) | AWS SES SMTP password. |
-| <a name="output_smtp_ports"></a> [smtp\_ports](#output\_smtp\_ports) | AWS SES SMTP TLS ports. |
-| <a name="output_smtp_username"></a> [smtp\_username](#output\_smtp\_username) | AWS SES SMTP username. |
+| <a name="output_smtp_endpoint"></a> [smtp\_endpoint](#output\_smtp\_endpoint) | The AWS SES SMTP host endpoint. |
+| <a name="output_smtp_password"></a> [smtp\_password](#output\_smtp\_password) | The AWS SES SMTP password. |
+| <a name="output_smtp_ports"></a> [smtp\_ports](#output\_smtp\_ports) | The AWS SES SMTP TLS ports. |
+| <a name="output_smtp_username"></a> [smtp\_username](#output\_smtp\_username) | The AWS SES SMTP username. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
