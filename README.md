@@ -13,8 +13,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | >= 3.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 3.37.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.1.0 |
 
 ## Modules
 
@@ -34,7 +34,10 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_deploy_access_key"></a> [deploy\_access\_key](#input\_deploy\_access\_key) | Deploy IAM access key. | `bool` | `true` | no |
+| <a name="input_deploy_iam_user"></a> [deploy\_iam\_user](#input\_deploy\_iam\_user) | Deploy IAM user. | `bool` | `true` | no |
 | <a name="input_iam_path"></a> [iam\_path](#input\_iam\_path) | The IAM path for the SES IAM user. | `string` | `"/"` | no |
+| <a name="input_iam_token"></a> [iam\_token](#input\_iam\_token) | Token used to generate unique name. | `string` | `"iam"` | no |
 | <a name="input_iam_username"></a> [iam\_username](#input\_iam\_username) | The Name for the SES IAM user. | `string` | `"ses-smtp-user"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Additional resource tags to apply to applicable resources. Format: {"key" = "value"} | `map(string)` | `{}` | no |
 
@@ -42,8 +45,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_smtp_endpoint"></a> [smtp\_endpoint](#output\_smtp\_endpoint) | The AWS SES SMTP host endpoint. |
-| <a name="output_smtp_password"></a> [smtp\_password](#output\_smtp\_password) | The AWS SES SMTP password. |
-| <a name="output_smtp_ports"></a> [smtp\_ports](#output\_smtp\_ports) | The AWS SES SMTP TLS ports. |
-| <a name="output_smtp_username"></a> [smtp\_username](#output\_smtp\_username) | The AWS SES SMTP username. |
+| <a name="output_aws_iam_access_key"></a> [aws\_iam\_access\_key](#output\_aws\_iam\_access\_key) | Outputs of the IAM access key. |
+| <a name="output_aws_iam_user"></a> [aws\_iam\_user](#output\_aws\_iam\_user) | Outputs of the IAM user created. |
+| <a name="output_smtp"></a> [smtp](#output\_smtp) | SMTP infomation. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

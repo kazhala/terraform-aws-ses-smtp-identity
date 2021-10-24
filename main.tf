@@ -4,22 +4,26 @@ resource "random_id" "this" {
   byte_length = 8
 
   keepers = {
-    "name" = var.iam_username
-    "path" = var.iam_path
+    token = var.iam_token
   }
 }
 
 resource "aws_iam_user" "this" {
-  name = "${var.iam_username}.${random_id.this.hex}"
+  count = var.deploy_iam_user ? 1 : 0
+
+  name = "${var.iam_username}-${random_id.this.hex}"
   path = var.iam_path
 
   tags = var.tags
 }
 
+# tfsec:ignore:aws-iam-no-policy-wildcards
 resource "aws_iam_user_policy" "this" {
+  count = var.deploy_iam_user ? 1 : 0
+
   # checkov:skip=CKV_AWS_40:Required for SES user.
   name = "AmazonSesSendingAccess"
-  user = aws_iam_user.this.name
+  user = aws_iam_user.this[0].name
 
   policy = jsonencode({
     "Version" : "2012-10-17",
@@ -34,5 +38,7 @@ resource "aws_iam_user_policy" "this" {
 }
 
 resource "aws_iam_access_key" "this" {
-  user = aws_iam_user.this.name
+  count = var.deploy_iam_user && var.deploy_access_key ? 1 : 0
+
+  user = aws_iam_user.this[0].name
 }
